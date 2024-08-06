@@ -26,28 +26,20 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-#email{
+#email , #first-name , #last-name , #password{
     width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-top: 30px;
+    margin-top: 10px;
     outline: none;
 }
 
-#password{
-    width: 300px;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-}
 
 /* login button  */
 .btn{
     width: 30%;
-    padding: 12px;
+    padding: 8px 15px;
     background-color: rgb(2, 86, 255);
     color: white;
     border: none;
@@ -66,6 +58,12 @@
 
 @media(max-width:330px){
     #email, #password{
+        width: 100%;
+    }
+    #first-name, #last-name{
+        width: 100%;
+    }
+    .btn{
         width: 100%;
     }
 
