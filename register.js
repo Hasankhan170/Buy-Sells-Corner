@@ -2,14 +2,14 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { auth } from "./config.js";
 
 
-const loginForm = document.querySelector('#loginForm')
+const registerForm = document.querySelector('#registerForm')
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
 const firstName = document.querySelector('#first-name')
 const lastName = document.querySelector('#last-name')
 
 
-loginForm.addEventListener('submit' , (e)=>{
+registerForm.addEventListener('submit' , (e)=>{
     e.preventDefault()
     createUserWithEmailAndPassword(auth, email.value, password.value,firstName.value,lastName.value)
     .then((userCredential) => {

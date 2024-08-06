@@ -11,7 +11,7 @@
     background-color: rgb(2, 86, 255);
     padding: 15px 25px;
 }
-#loginForm{
+#loginForm , #registerForm{
     display: flex;
     justify-content: center;
     flex-direction: column;
