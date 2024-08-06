@@ -5,12 +5,14 @@
 
 }
 
-/* login css  */
+
+/* login and register css  */
 
 .head{
     background-color: rgb(2, 86, 255);
     padding: 15px 25px;
 }
+
 #loginForm , #registerForm{
     display: flex;
     justify-content: center;
@@ -76,6 +78,9 @@
     #loginForm{
         width: 100%;
     }
+    #registerForm{
+        width: 100%;
+    }
 }
 
 @media(max-width:330px){
@@ -88,12 +93,15 @@
     .btn{
         width: 100%;
     }
+    #choose-file{
+        width: 100%;
+    }
 
 }
 
 
-/* login css end  */
+/* login and register css end  */
 
 
-/* register css  */
+
 
