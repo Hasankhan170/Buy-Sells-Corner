@@ -35,6 +35,23 @@
     outline: none;
 }
 
+#choose-file{
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+::-webkit-file-upload-button{
+    background-color: rgb(2, 86, 255);
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
 .register-link{
     margin-top: 5px;
     text-decoration: none;
