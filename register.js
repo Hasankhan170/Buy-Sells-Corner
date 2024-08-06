@@ -1,8 +1,9 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { auth, storage, ref } from "./config.js"; // Ensure correct import statement
-import { uploadBytes } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+import { uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
 // Get references to DOM elements
+
 const registerForm = document.querySelector('#registerForm');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
@@ -11,13 +12,16 @@ const lastName = document.querySelector('#last-name');
 const chooseFile = document.querySelector('#choose-file');
 
 // Handle form submission
+
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Get the file from the input
+
     const file = chooseFile.files[0];
 
     // Create user with email and password
+
     createUserWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -31,7 +35,16 @@ registerForm.addEventListener('submit', (e) => {
                 
                 uploadBytes(fileRef, file)
                     .then((snapshot) => {
-                        console.log('Uploaded a blob or file!');
+                        console.log('Uploaded a blob or file!' , snapshot);
+                        // Get the download URL
+
+                        getDownloadURL(fileRef)
+                           .then((downloadURL) => {
+                                console.log('File available at:', downloadURL);
+                            })
+                           .catch((error) => {
+                                console.log('Error getting URL:', error);
+                            });
                     });
             } 
         })
