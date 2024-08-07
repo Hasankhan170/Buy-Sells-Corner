@@ -10,7 +10,7 @@ const userEmail = document.querySelector('#user-email');
 const logoutBtn = document.querySelector('#logout-Btn');
 
 // Function to handle user profile display
-const displayUserProfile = async (user) => {
+export const displayUserProfile = async (user) => {
   const uid = user.uid;
   console.log(uid);
 
@@ -46,13 +46,15 @@ const handleAuthChange = async (user) => {
 onAuthStateChanged(auth, handleAuthChange);
 
 // Handle logout
-logoutBtn.addEventListener('click', () => {
-  signOut(auth).then(() => {
-    window.location = 'login.html';
-  }).catch((error) => {
-    console.log(error);
+ export const handleLogout = ()=>{
+  logoutBtn.addEventListener('click', () => {
+    signOut(auth).then(() => {
+      window.location = 'login.html';
+    }).catch((error) => {
+      console.log(error);
+    });
   });
-});
+}
 
 
 
