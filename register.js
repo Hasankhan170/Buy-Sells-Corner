@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { auth, storage, ref, db } from "./config.js";
 import { uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
-import { collection, addDoc, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { collection, addDoc, } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 // Get references to DOM elements
 const registerForm = document.querySelector('#registerForm');

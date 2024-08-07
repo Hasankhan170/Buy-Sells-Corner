@@ -12,6 +12,9 @@ const password = document.querySelector('#password')
 loginForm.addEventListener('submit' ,(e)=>{
   e.preventDefault();
   
+
+
+  
   if(email.value === '' || password.value ===''){
     alert('Please fill all fields!')
     return; 
@@ -31,6 +34,9 @@ loginForm.addEventListener('submit' ,(e)=>{
     const errorMessage = error.message;
     console.log(errorMessage);
   });
+    // validate form inputs
+    email.value = ""
+    password.value = ""
 })
 
 
