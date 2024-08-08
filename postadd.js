@@ -17,8 +17,16 @@ const postNumber = document.querySelector(".post-number")
 // arr ma store krvane ky liye 
 let arr = []
 
+
+
 // file input change event
 postForm.addEventListener('submit', async (e)=>{
+
+    if(fileInp.value === '' || productTitle.value === '' || productDescription.value === '' || rsPrice.value === '' || fileInp.value === '' || postName.value === '' || postNumber.value === '' ){
+        alert('please fill this form')
+        return;  // form not found so function exit karega
+    }
+
     e.preventDefault();
     console.log(fileInp.value);
     console.log(productTitle.value);
@@ -45,9 +53,8 @@ postForm.addEventListener('submit', async (e)=>{
 
     //    arr.push(docRef.id)
        console.log(arr);
-       window.location = "./index.html"
+    //    window.location = "./index.html"
        alert('Product posted successfully!')
-       handleLogout(); // logout karega ky liye handleLogout() function sy call karega
       
 
 
