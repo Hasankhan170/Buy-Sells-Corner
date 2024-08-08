@@ -1,9 +1,7 @@
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 import {  handleLogout } from  "./app.js"
-import { db } from "./config.js"
-
-
-
+import { db , storage , ref } from "./config.js"
+import { uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
 
 const postForm = document.querySelector("#post-form")
@@ -14,55 +12,55 @@ const rsPrice = document.querySelector(".rs-price")
 const postName = document.querySelector(".post-name")
 const postNumber = document.querySelector(".post-number")
 
-// arr ma store krvane ky liye 
-let arr = []
-
-
 
 // file input change event
 postForm.addEventListener('submit', async (e)=>{
+  e.preventDefault();
 
-    if(fileInp.value === '' || productTitle.value === '' || productDescription.value === '' || rsPrice.value === '' || fileInp.value === '' || postName.value === '' || postNumber.value === '' ){
+    if(fileInp.files.length === 0 || productTitle.value === '' || productDescription.value === '' || rsPrice.value === '' || fileInp.value === '' || postName.value === '' || postNumber.value === '' ){
         alert('please fill this form')
         return;  // form not found so function exit karega
     }
 
-    e.preventDefault();
-    console.log(fileInp.value);
-    console.log(productTitle.value);
-    console.log(productDescription.value);
-    console.log(rsPrice.value);
-    console.log(postName.value);
-    console.log(postNumber.value);
 
+
+    const prouctImgFile = fileInp.files[0]
+ 
     try {
+       const productImgUrl = await uploadImg(prouctImgFile)
+      //  console.log('product image url:', productImgUrl)
+
         const docRef = await addDoc(collection(db, "users"), {
             title: productTitle.value,
             description: productDescription.value,
             price: rsPrice.value,
             name: postName.value,
             number: postNumber.value,
-            image: fileInp.value,
+            PoductImage: productImgUrl 
         });
+       alert('Product posted successfully!')
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
 
-
-
-    //    arr.push(docRef.id)
-       console.log(arr);
     //    window.location = "./index.html"
-       alert('Product posted successfully!')
       
-
-
-
 
 })
 
 
+async function uploadImg(file) {
+ 
+    const spaceRef = ref(storage, `productImg/${postNumber.value}/${postName.value}`);
+
+   const snapshot = await uploadBytes(spaceRef, file);
+
+  const productImgUrl = await getDownloadURL(spaceRef);
+   console.log('File available at:', productImgUrl);
+
+  return productImgUrl;
+}
 
 
 

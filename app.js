@@ -39,7 +39,8 @@ const handleAuthChange = async (user) => {
     await displayUserProfile(user);
   } else {
     // No user is signed in
-    imgAvatar.innerHTML = `<button><a href="./login.html">Login</a></button>`;
+    imgAvatar.innerHTML = `<button style ="color :white;font-size: 18px;
+    font-weight: bold;"><a href="./login.html">Login</a></button>`;
   }
 };
 
