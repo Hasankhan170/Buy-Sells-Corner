@@ -11,15 +11,15 @@ const password = document.querySelector('#password')
 
 loginForm.addEventListener('submit' ,(e)=>{
   e.preventDefault();
-  
+  // agr user bina email or password daly button pr click kary jab ye condtion chaly gi
 
-
-  
   if(email.value === '' || password.value ===''){
     alert('Please fill all fields!')
     return; 
   }
 
+  // user login hoga uska kam ha ye 
+  
   signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
     const user = userCredential.user;
