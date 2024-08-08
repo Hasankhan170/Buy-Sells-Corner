@@ -56,6 +56,8 @@ onAuthStateChanged(auth, handleAuthChange);
   });
 }
 
+handleLogout()
+
 
 
 
