@@ -197,3 +197,25 @@ label{
     margin-top: 30px;
     margin-left: 0%;
 }
+
+
+/* index section styling  */
+
+#index-section{
+    background-color: rgb(255, 247, 237);
+    padding: 20px;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+#form-index{
+    display: flex;
+    flex-direction: column;
+
+}
+#cards-index{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}

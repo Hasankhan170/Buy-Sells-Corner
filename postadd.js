@@ -30,7 +30,7 @@ postForm.addEventListener('submit', async (e)=>{
        const productImgUrl = await uploadImg(prouctImgFile)
       //  console.log('product image url:', productImgUrl)
 
-        const docRef = await addDoc(collection(db, "users"), {
+        const docRef = await addDoc(collection(db, "postAd"), {
             title: productTitle.value,
             description: productDescription.value,
             price: rsPrice.value,
