@@ -70,32 +70,39 @@ handleLogout()
 
 const productContainer = document.querySelector('#cards-index')
 
-let arr = []
+
+
 
 
 const getProducts = async () => {
-  let user = null
+try {
   const q = collection(db, "postAd");
   const querySnapshot = await getDocs(q);
-  renderData()
-  querySnapshot.forEach((doc) => {
-    user = doc.data();
-    arr.push(user)
-  console.log(arr);
-
+  let arr = []
   
+  querySnapshot.forEach((doc) => {
+    arr.push(doc.data())
+    console.log(arr);
+})
+renderData(arr)
+} catch (error) {
+  console.log(error);
+  
+}
 
-  });
 } 
 
+
+
 getProducts()
-function renderData() {
+function renderData(arr) {
+  productContainer.innerHTML = '' // Clear previous data
 
   arr.forEach((item)=>{
     productContainer.innerHTML += `
      <div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[500px]">
       <a href="#">
-          <img width="100%" class="rounded-t-lg h-40 object-cover" src="" alt="" />
+          <img id="img" width="100%" class="rounded-t-lg h-40 object-cover" src="" alt="" />
       </a>
       <div class="flex flex-col p-5 h-full flex-grow">
           <a href="#">
