@@ -159,7 +159,7 @@ label{
     margin-top: 20px;
 }
 
-.product-title, .product-description, .rs-price{
+.product-title, .product-description, .rs-price, .post-number, .post-name{
     width: 100%;
     padding: 15px 10px;
     border: 1px solid #ccc;
@@ -169,22 +169,6 @@ label{
     margin-bottom: 10px;
 }
 
-.post-name{
-    width: 100%;
-    padding: 15px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    margin-top: 10px;
-
-}
-.post-number{
-    width: 100%;
-    padding: 15px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-}
 
 .Post-now-btn{
     padding: 10px 15px;
@@ -208,14 +192,12 @@ label{
     width: 90%;
     margin: 0 auto;
 }
-#form-index{
-    display: flex;
-    flex-direction: column;
 
-}
 #cards-index{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px 150px;
 }
