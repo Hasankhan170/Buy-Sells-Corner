@@ -244,6 +244,7 @@ label{
 .inner-main{
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
 }
 
 
@@ -252,7 +253,7 @@ label{
         flex-direction: column;
         gap: 5px;
         height: auto;
-        border-radius: 20px 0px 20px 20px;
+        border-radius: 20px 20px 20px 20px;
   
     }
 
@@ -260,6 +261,13 @@ label{
         width: 100%;
         height: auto;
         
+    }
+
+    .img-singlePage{
+        width: 100%;
+        height: 200px;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
     }
     
 }
