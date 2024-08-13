@@ -96,8 +96,8 @@ function renderData(arr) {
   arr.forEach((item)=>{
     productContainer.innerHTML += `
 <div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[500px]">
-  <a href="#">
-    <img width="100%" class="rounded-t-lg h-40 object-cover" src="${item.PoductImage}" alt="Product Image" />
+<a href="#">
+    <img id ="card-adjust" class="rounded-t-lg  w-full object-cover" src="${item.PoductImage}" alt="Product Image" />
   </a>
   <div class="flex flex-col p-5 h-full flex-grow">
     <a href="#">
@@ -115,6 +115,7 @@ function renderData(arr) {
     </div>
   </div>
 </div>
+
 
     `
 
