@@ -259,12 +259,12 @@ label{
 
 .blue-box-main{
     display: flex;
-    background-color: blue;
+    background-color: rgb(2, 86, 255);
     padding: 10px;
     border-radius: 20px;
     margin-top: 20px;
     gap: 20px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
 }
 
@@ -287,9 +287,22 @@ label{
     padding: 10px 30px;
     background-color: black;
     color: white;
-
+    margin-top: 10px;
 }
-@media (max-width:500px) {
+#chat-btn{
+    padding: 10px 45px;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+}
+#add-to-card-btn{
+    padding: 10px 30px;
+    background-color: rgb(2, 86, 255);
+    color: white;
+    margin-top: 15px;
+}
+
+@media (max-width:750px) {
     .main-boxSingle{
         flex-direction: column;
         gap: 5px;
@@ -311,4 +324,20 @@ label{
         overflow: hidden;
     }
     
+}
+
+@media (max-width:700px) {
+    .blue-box-main{
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 20px 20px 20px 20px;
+        align-items: start;
+    }
+
+    #add-to-card-btn{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
 }
