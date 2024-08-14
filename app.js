@@ -95,7 +95,7 @@ function renderData(arr) {
 
   arr.forEach((item)=>{
     productContainer.innerHTML += `
-<div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[500px]">
+<div id = "cards-manage" class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[500px]">
 <a href="#">
     <img id ="card-adjust" class="rounded-t-lg  w-full object-cover" src="${item.PoductImage}" alt="Product Image" />
   </a>
@@ -103,7 +103,7 @@ function renderData(arr) {
     <a href="#">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${item.title}</h5>
     </a>
-    <p class="mb-3 flex-grow font-normal text-gray-700 dark:text-gray-400">${item.description}</p>
+    <p id ="para-dec" class="mb-3 flex-grow font-normal text-gray-700 dark:text-gray-400">${item.description}</p>
     <div class="flex justify-between items-center mt-auto">
       <p class="text-1xl font-bold tracking-tight text-gray-900 dark:text-white">RS ${item.price}</p>
       <a href="./singlepage.html" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
