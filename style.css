@@ -130,19 +130,19 @@
     display: none;
 }
 label {
-    height: 150px; /* Height ko font size ke according adjust kiya */
-    width: 150px;  /* Width ko font size ke according adjust kiya */
+    height: 150px; 
+    width: 150px; 
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 120px; /* Bada font size */
+    font-size: 120px;
     background-color: rgb(2, 86, 255);
     border-radius: 30px;
     border: 10px solid white;
     text-align: center;
-    line-height: 1; /* Ensure no extra space around text */
-    overflow: hidden; /* Text ko overflow se bachane ke liye */
+    line-height: 1; 
+    overflow: hidden; 
 }
 
 .heading-img-upload{
@@ -190,10 +190,6 @@ label {
 
 
 
-
-
-
-
 /* index section styling  */
 
 #index-section{
@@ -202,6 +198,7 @@ label {
     gap: 20px;
     width: 90%;
     margin: 0 auto;
+    margin-top: 30px;
 }
 
 #cards-index{
