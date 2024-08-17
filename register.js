@@ -45,8 +45,12 @@ registerForm.addEventListener('submit', async (e) => {
             profilePicture: profilePictureUrl
         });
 
+
         console.log("User data added with profile picture URL:", profilePictureUrl);
+
         
+
+
 
         // Clear input fields
         email.value = "";
