@@ -245,12 +245,15 @@ label {
     width: 100%;
     border-radius: 20px;
     padding: 10px;
+    font-weight: bold;
 }
+
 
 .inner-main{
     display: flex;
     justify-content: space-between;
     padding-right: 10px;
+    align-items: center;
 }
 #cards-manage{
     width: 100%;
@@ -267,7 +270,6 @@ label {
     border-radius: 20px;
     margin-top: 20px;
     gap: 20px;
-    /* flex-wrap: wrap; */
     align-items: center;
 }
 
