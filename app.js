@@ -100,7 +100,7 @@ getProducts()
 let data = []
 function renderData(arr) {
   productContainer.innerHTML = '' 
-  arr.forEach((item)=>{
+  arr.forEach((item , index)=>{
     productContainer.innerHTML += `
 <div id = "cards-manage" class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-[500px]">
 <a href="#">
@@ -132,6 +132,7 @@ function renderData(arr) {
     btn.addEventListener('click', () => {
       data = []
       data.push(arr[index])
+      
       localStorage.setItem('information', JSON.stringify(data))
     })
   })

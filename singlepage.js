@@ -38,7 +38,7 @@ function renderGetData(){
 
         <div class="blue-box-main">
           <div class="blue-box-1">
-            <img class="blue-box-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1gMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMREAAAAAAACgAqCCgAgAKJFAABRAFQAAFABBBUUAAAABQEAQUAAABFAQKAoAAAAAAACpFBEUUQAFAQBKQFRUBRAFAFAAEUBFQEUQBRFAAAAAAARUBUVAAAAAAAFQBQBQAEFQQAAVFABAXFRQQAUAEEVAFQAAAAFABAAVRFAEUAAAAQAAAAAFAAAAQVBAAAAAAAAAAFAFAAABAAAWAqAKgAigAAAIAIAAAAAAAAAAoAoAIAAAAAKACKAAAAIqCAAAAAAAAAAKIoAAAFAAAVAUAAAAAEEAAAAAAAAAAAAgQFAFAIACggCoAIAAAAIAoAIAAAAAoAAAAAAAoCgAP/Z" alt="">
+            <img class="blue-box-img" src="" alt="">
           </div>
           <div class="blue-box-text">
             <p>Name : ${item.name}</p>
@@ -67,3 +67,24 @@ logoutBtn.addEventListener('click', ()=>{
 })
 
 
+
+
+
+// singlepage.js
+// Retrieve the profile picture URL from local storage
+const profilePictureUrl = localStorage.getItem('profilePictureUrl');
+
+// Check if the profile picture URL exists and set it to the profile image element
+const profileImg = document.querySelector('#profile-img');
+
+if (profilePictureUrl) {
+  // Set the src attribute directly if profileImg is an img element
+  profileImg.src = profilePictureUrl;
+  console.log(profilePictureUrl);
+} else {
+  // Optionally, set a default image if no profile picture URL is available
+  profileImg.src = '';
+}
+
+
+// Other code to handle user data and page functionality

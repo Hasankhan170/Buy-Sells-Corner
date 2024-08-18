@@ -58,6 +58,9 @@ registerForm.addEventListener('submit', async (e) => {
         await addDoc(collection(db, "users"), userData);
 
          registerBtn.innerHTML = 'Register'
+         if (profilePictureUrl) {
+            localStorage.setItem('profilePictureUrl', profilePictureUrl);
+        }
         console.log("User data added with profile picture URL:", profilePictureUrl);
 
         
