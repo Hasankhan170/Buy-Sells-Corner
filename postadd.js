@@ -11,6 +11,8 @@ const productDescription = document.querySelector(".product-description")
 const rsPrice = document.querySelector(".rs-price")
 const postName = document.querySelector(".post-name")
 const postNumber = document.querySelector(".post-number")
+const postNowBtn = document.querySelector(".Post-now-btn")
+
 
 
 // file input change event
@@ -25,6 +27,8 @@ postForm.addEventListener('submit', async (e)=>{
 
 
     const prouctImgFile = fileInp.files[0]
+
+    postNowBtn.innerHTML = 'Loading...'
  
     try {
        const productImgUrl = await uploadImg(prouctImgFile)
@@ -38,13 +42,23 @@ postForm.addEventListener('submit', async (e)=>{
             number: postNumber.value,
             PoductImage: productImgUrl 
         });
+
        alert('Product posted successfully!')
+       postNowBtn.innerHTML = 'Post Now'
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
 
     //    window.location = "./index.html"
+
+    // validate form inputs
+    productTitle.value = ""
+    productDescription.value = ""
+    rsPrice.value = ""
+    fileInp.value = ""
+    postName.value = ""
+    postNumber.value = ""
       
 
 })

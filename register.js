@@ -10,11 +10,15 @@ const password = document.querySelector('#password');
 const firstName = document.querySelector('#first-name');
 const lastName = document.querySelector('#last-name');
 const chooseFile = document.querySelector('#choose-file');
+const registerBtn = document.querySelector('.btn');
+
 
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const file = chooseFile.files[0];
+
+    registerBtn.innerHTML = 'Loading...'
 
     try {
         // Create user with email and password
@@ -37,7 +41,6 @@ registerForm.addEventListener('submit', async (e) => {
             
             console.log('File available at:', profilePictureUrl);
 
-            localStorage.setItem('profilePictureUrl', profilePictureUrl);
         }
 
         const userData = {
@@ -54,7 +57,7 @@ registerForm.addEventListener('submit', async (e) => {
         // Add user data to Firestore
         await addDoc(collection(db, "users"), userData);
 
-
+         registerBtn.innerHTML = 'Register'
         console.log("User data added with profile picture URL:", profilePictureUrl);
 
         

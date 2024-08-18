@@ -6,10 +6,13 @@ import { auth } from "./config.js";
 const loginForm = document.querySelector('#loginForm')
 const email = document.querySelector('#email')
 const password = document.querySelector('#password')
+const loginBtn = document.querySelector('.btn')
+
 
 
 
 loginForm.addEventListener('submit' ,(e)=>{
+  
   e.preventDefault();
   // agr user bina email or password daly button pr click kary jab ye condtion chaly gi
 
@@ -17,6 +20,8 @@ loginForm.addEventListener('submit' ,(e)=>{
     alert('Please fill all fields!')
     return; 
   }
+
+  loginBtn.innerHTML = "Loading...";
 
   // user login hoga uska kam ha ye 
   
@@ -28,15 +33,23 @@ loginForm.addEventListener('submit' ,(e)=>{
       alert('login successfully!')
       window.location = "./index.html"
     }, 1000);
+    loginBtn.innerHTML = "Login";
     
   })
   .catch((error) => {
     const errorMessage = error.message;
     console.log(errorMessage);
+
+    alert('Login failed: ' + errorMessage);
+
+    // Reset form to allow user to try again
+
+    
   });
     // validate form inputs
     email.value = ""
     password.value = ""
+    
 })
 
 
