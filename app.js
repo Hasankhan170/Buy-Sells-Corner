@@ -8,6 +8,10 @@ const imgAvatar = document.querySelector('#img-section');
 const userName = document.querySelector('#user-name');
 const userEmail = document.querySelector('#user-email');
 const logoutBtn = document.querySelector('#logout-Btn');
+// const formSearch = document.querySelector('.searchForm');
+// const SearchBar = document.querySelector('.searchBar');
+
+
 
 // Function to handle user profile display
 export const displayUserProfile = async (user) => {
@@ -92,8 +96,7 @@ try {
 } 
 
 
-getProducts();
-
+getProducts()
 let data = []
 function renderData(arr) {
   productContainer.innerHTML = '' 
@@ -141,7 +144,11 @@ function renderData(arr) {
 
 
 
+// serach bar 
 
+
+
+// end of serach bar
 
 
 
