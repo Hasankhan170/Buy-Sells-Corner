@@ -8,9 +8,6 @@ const showIndexData = document.querySelector('#show-index-data');
 
 const getProducts = localStorage.getItem('information')
 
-
-
-
 console.log(getProducts);
 
 

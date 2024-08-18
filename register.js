@@ -34,16 +34,25 @@ registerForm.addEventListener('submit', async (e) => {
 
             // Get download URL
             profilePictureUrl = await getDownloadURL(fileRef);
+            
             console.log('File available at:', profilePictureUrl);
+
+            localStorage.setItem('profilePictureUrl', profilePictureUrl);
         }
 
-        // Add user data to Firestore
-        await addDoc(collection(db, "users"), {
+        const userData = {
             email: email.value,
             firstName: firstName.value,
             lastName: lastName.value,
-            profilePicture: profilePictureUrl
-        });
+        }
+
+                // Add profile picture URL if it exists
+                if (profilePictureUrl) {
+                    userData.profilePicture = profilePictureUrl;
+                }
+
+        // Add user data to Firestore
+        await addDoc(collection(db, "users"), userData);
 
 
         console.log("User data added with profile picture URL:", profilePictureUrl);
