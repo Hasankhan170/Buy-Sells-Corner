@@ -26,23 +26,23 @@ function renderGetData(){
 
         <div class="inner-main">
           <div>
-            <h1>Rs ${item.price}</h1>
+            <h1 style = "font-size:25px"">Rs ${item.price}</h1>
           </div>
           <div>
             <p><i class="fa-solid fa-download"></i> <i class="fa-regular fa-heart"></i></p>
           </div>
         </div>
 
-        <p style="margin-top: 20px;">${item.title}</p>
-        <p style="margin-top: 5px;">${item.description}</p>
+        <p style="margin-top: 20px;">Title : ${item.title}</p>
+        <p style="margin-top: 5px;">Descp : ${item.description}</p>
 
         <div class="blue-box-main">
           <div class="blue-box-1">
             <img class="blue-box-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1gMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMREAAAAAAACgAqCCgAgAKJFAABRAFQAAFABBBUUAAAABQEAQUAAABFAQKAoAAAAAAACpFBEUUQAFAQBKQFRUBRAFAFAAEUBFQEUQBRFAAAAAAARUBUVAAAAAAAFQBQBQAEFQQAAVFABAXFRQQAUAEEVAFQAAAAFABAAVRFAEUAAAAQAAAAAFAAAAQVBAAAAAAAAAAFAFAAABAAAWAqAKgAigAAAIAIAAAAAAAAAAoAoAIAAAAAKACKAAAAIqCAAAAAAAAAAKIoAAAFAAAVAUAAAAAEEAAAAAAAAAAAAgQFAFAIACggCoAIAAAAIAoAIAAAAAoAAAAAAAoCgAP/Z" alt="">
           </div>
           <div class="blue-box-text">
-            <p>${item.name}</p>
-            <p>${item.number}</p>
+            <p>Name : ${item.name}</p>
+            <p><i class="fa-solid fa-phone"></i> ${item.number}</p>
             <button id="call-btn">Add to Cart</button>
             <button id="chat-btn">Buy Now</button>
 
