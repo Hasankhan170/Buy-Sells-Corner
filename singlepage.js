@@ -8,14 +8,17 @@ const showIndexData = document.querySelector('#show-index-data');
 
 const getProducts = localStorage.getItem('information')
 
-console.log(getProducts);
+const profilePictureUrl = localStorage.getItem('profilePictureUrl');
+
+
+
 
 
 function renderGetData(){
     showIndexData.innerHTML = '' 
     const products = JSON.parse(getProducts)
 
-    products.forEach((item)=>{
+    products.forEach((item,index)=>{
         showIndexData.innerHTML += `
         <div class="main-boxSingle mt-10">
       <div class=".img-box-singlePage"> 
@@ -38,7 +41,7 @@ function renderGetData(){
 
         <div class="blue-box-main">
           <div class="blue-box-1">
-            <img class="blue-box-img" src="" alt="">
+            <img class="blue-box-img" src="${profilePictureUrl}" alt="">
           </div>
           <div class="blue-box-text">
             <p>Name : ${item.name}</p>
@@ -70,21 +73,12 @@ logoutBtn.addEventListener('click', ()=>{
 
 
 
-// singlepage.js
-// Retrieve the profile picture URL from local storage
-const profilePictureUrl = localStorage.getItem('profilePictureUrl');
 
-// Check if the profile picture URL exists and set it to the profile image element
-const profileImg = document.querySelector('#profile-img');
-
-if (profilePictureUrl) {
-  // Set the src attribute directly if profileImg is an img element
-  profileImg.src = profilePictureUrl;
-  console.log(profilePictureUrl);
-} else {
-  // Optionally, set a default image if no profile picture URL is available
-  profileImg.src = '';
-}
+// if (profilePictureUrl) {
+//   console.log(profilePictureUrl);
+//   profileImg.innerHTML += `
+//   <img style = "background-color: black;
+//         color: red;" src="${profilePictureUrl}" alt="Profile Picture">`
+// } 
 
 
-// Other code to handle user data and page functionality

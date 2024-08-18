@@ -59,7 +59,7 @@ registerForm.addEventListener('submit', async (e) => {
 
          registerBtn.innerHTML = 'Register'
          if (profilePictureUrl) {
-            localStorage.setItem('profilePictureUrl', profilePictureUrl);
+            localStorage.setItem('profilePictureUrl', profilePictureUrl) || []
         }
         console.log("User data added with profile picture URL:", profilePictureUrl);
 
