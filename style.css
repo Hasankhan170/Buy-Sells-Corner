@@ -232,7 +232,7 @@ label {
 }
 
 .img-box-singlePage{
-    width: 300px;
+    width: 30%;
     height: 100%;
 }
 
@@ -242,6 +242,7 @@ label {
     object-fit: cover;
     border-radius: 20px 0px 0px 20px;
     overflow: hidden;
+    
 }
 
 .test-box-singlePage{

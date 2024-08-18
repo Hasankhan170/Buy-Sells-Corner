@@ -21,7 +21,7 @@ function renderGetData(){
     products.forEach((item,index)=>{
         showIndexData.innerHTML += `
         <div class="main-boxSingle mt-10">
-      <div class=".img-box-singlePage"> 
+      <div class="img-box-singlePage"> 
         <img class="img-singlePage" src="${item.PoductImage}" alt="">
       </div>
 
