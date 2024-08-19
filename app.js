@@ -32,6 +32,8 @@ export const displayUserProfile = async (user) => {
     } else {
       profileImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjOUw1odhxliZ2amTsikd3QEFMtox7V947jg&s';
     }
+
+    localStorage.setItem('userProfile', JSON.stringify(userData));
   });
 
   // imgAvatar.innerHTML = ''; // Clear login button if user is logged in
@@ -77,28 +79,33 @@ const productContainer = document.querySelector('#cards-index')
 
 
 
-
+let arr = []
 const getProducts = async () => {
+
+
 try {
   const q = collection(db, "postAd");
   const querySnapshot = await getDocs(q);
-  let arr = []
-  
+  arr = []
   querySnapshot.forEach((doc) => {
     arr.push(doc.data())
-    console.log(arr);
 })
-  renderData(arr)
+console.log(arr);
+renderData(arr)
 } catch (e) {
+  console.log('Error getting documents:', e);
 
 }
 
 } 
 
 
-getProducts()
+
+
 let data = []
+
 function renderData(arr) {
+  if (!productContainer) return;
   productContainer.innerHTML = '' 
   arr.forEach((item , index)=>{
     productContainer.innerHTML += `
@@ -132,31 +139,34 @@ function renderData(arr) {
     btn.addEventListener('click', () => {
       data = []
       data.push(arr[index])
+
       
       localStorage.setItem('information', JSON.stringify(data))
     })
+
   })
 
- 
-
-
-  
 }
 
+getProducts()
 
 
 // serach bar 
 
 
 
-// end of serach bar
 
 
+const searchInput = document.querySelector("#search");
 
 
-
-
-
+searchInput.addEventListener("input", (e) => {
+  const searchBar = e.target.value.toLowerCase();
+  const filteredAds = arr.filter((ad) =>
+    ad.title.toLowerCase().includes(searchBar)
+  );
+  renderData(filteredAds);
+});
 
 
 

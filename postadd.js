@@ -1,5 +1,4 @@
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import {  handleLogout } from  "./app.js"
 import { db , storage , ref } from "./config.js"
 import { uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
@@ -12,6 +11,9 @@ const rsPrice = document.querySelector(".rs-price")
 const postName = document.querySelector(".post-name")
 const postNumber = document.querySelector(".post-number")
 const postNowBtn = document.querySelector(".Post-now-btn")
+
+
+
 
 
 
@@ -86,10 +88,22 @@ async function uploadImg(file) {
 
 // logout button export karvaya ha index.html sy 
 
-const logoutBtn = document.querySelector('#logout-Btn');
+// const logoutBtn = document.querySelector('#logout-Btn');
 
-logoutBtn.addEventListener('click', ()=>{
-    handleLogout();
-})
+// logoutBtn.addEventListener('click', ()=>{
+//     handleLogout();
+// })
 
 
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const user = JSON.parse(localStorage.getItem('userProfile'));
+
+//   if (user) {
+//     // Assuming 'user' here is an object with the required properties
+//     displayUserProfile(user);
+//   } else {
+//     console.error('No user profile found in localStorage.');
+//   }
+// });

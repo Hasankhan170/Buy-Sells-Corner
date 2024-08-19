@@ -74,6 +74,10 @@ logoutBtn.addEventListener('click', ()=>{
 
 
 
+
+
+
+
 // if (profilePictureUrl) {
 //   console.log(profilePictureUrl);
 //   profileImg.innerHTML += `
