@@ -16,15 +16,19 @@ const userName = document.querySelector("#user-name")
 const userEmail = document.querySelector("#user-email")
 
 
-const getProfile = localStorage.getItem('profilePictureUrl')
+// data get on register.js with the help of localStorage
+const getProfile = localStorage.getItem('userProfile')
 
 if(getProfile){
-    profileImg.src = getProfile
-    // userEmail.innerHTML = getProfile
+
+    const userProfile = JSON.parse(getProfile)
+    console.log(userProfile);
+    profileImg.src = JSON.parse(getProfile).profilePicture
+    userName.innerHTML = JSON.parse(getProfile).firstName
+    userEmail.innerHTML = JSON.parse(getProfile).email
+
+
 }
-
-
-
 
 
 

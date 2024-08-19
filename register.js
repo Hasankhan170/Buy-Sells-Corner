@@ -47,25 +47,19 @@ registerForm.addEventListener('submit', async (e) => {
             email: email.value,
             firstName: firstName.value,
             lastName: lastName.value,
-        }
-
-        localStorage.setItem('user' ,userData)
-
-                // Add profile picture URL if it exists
-                if (profilePictureUrl) {
-                    userData.profilePicture = profilePictureUrl;
-                }
+            profilePicture: profilePictureUrl || 'default-image-url' // Provide a default URL if no picture
+        };
 
         // Add user data to Firestore
         await addDoc(collection(db, "users"), userData);
 
-         registerBtn.innerHTML = 'Register'
-         if (profilePictureUrl) {
-            localStorage.setItem('profilePictureUrl', profilePictureUrl) || []
-        }
-        console.log("User data added with profile picture URL:", profilePictureUrl);
-
-        
+        // Store user data in localStorage
+        localStorage.setItem('userProfile', JSON.stringify({
+            email: email.value,
+            firstName: firstName.value,
+            lastName: lastName.value,
+            profilePicture: profilePictureUrl || 'default-image-url'
+        }));
 
 
 
