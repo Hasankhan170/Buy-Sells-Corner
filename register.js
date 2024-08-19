@@ -49,6 +49,8 @@ registerForm.addEventListener('submit', async (e) => {
             lastName: lastName.value,
         }
 
+        localStorage.setItem('user' ,userData)
+
                 // Add profile picture URL if it exists
                 if (profilePictureUrl) {
                     userData.profilePicture = profilePictureUrl;

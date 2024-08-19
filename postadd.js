@@ -11,6 +11,17 @@ const rsPrice = document.querySelector(".rs-price")
 const postName = document.querySelector(".post-name")
 const postNumber = document.querySelector(".post-number")
 const postNowBtn = document.querySelector(".Post-now-btn")
+const profileImg = document.querySelector("#profile-img")
+const userName = document.querySelector("#user-name")
+const userEmail = document.querySelector("#user-email")
+
+
+const getProfile = localStorage.getItem('profilePictureUrl')
+
+if(getProfile){
+    profileImg.src = getProfile
+    // userEmail.innerHTML = getProfile
+}
 
 
 
