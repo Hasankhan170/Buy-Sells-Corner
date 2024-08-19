@@ -1,6 +1,7 @@
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 import { db , storage , ref } from "./config.js"
 import { uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+import { getAuth ,signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 
 const postForm = document.querySelector("#post-form")
@@ -26,8 +27,6 @@ if(getProfile){
     profileImg.src = JSON.parse(getProfile).profilePicture
     userName.innerHTML = JSON.parse(getProfile).firstName
     userEmail.innerHTML = JSON.parse(getProfile).email
-
-
 }
 
 
@@ -103,11 +102,24 @@ async function uploadImg(file) {
 
 // logout button export karvaya ha index.html sy 
 
-// const logoutBtn = document.querySelector('#logout-Btn');
+const logoutBtn = document.querySelector('#logout-Btn');
 
-// logoutBtn.addEventListener('click', ()=>{
-//     handleLogout();
-// })
+logoutBtn.addEventListener('click',()=>{
+  const auth = getAuth();
+  signOut(auth).then(() => {
+  window.location = 'login.html'
+}).catch((error) => {
+  console.log(error);
+ 
+});
+})
+
+
+// function logoutBtn(){
+
+// }
+
+// lo
 
 
 
